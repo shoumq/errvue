@@ -1,4 +1,19 @@
 <template>
+    <header>
+        <div class="container">
+            <div class="flex">
+                <a href="/" class="item">Продукты</a>
+                <a href="/login1" class="item">Создание 1</a>
+                <a href="/login2" class="item">Создание 2</a>
+                <a href="/login3" class="item">Создание 3</a>
+                <a href="/login4" class="item">Создание 4</a>
+                <a href="/login5" class="item">Создание 5</a>
+                <a href="/login6" class="item">Создание 6</a>
+                <a href="/login7" class="item">Создание 7</a>
+            </div>
+        </div>
+    </header>
+
     <div class="container">
         <div class="window">
             <div class="title">Добавить продукт</div>
