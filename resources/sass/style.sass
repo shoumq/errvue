@@ -7,12 +7,12 @@
 
 body
     background: #f5f5f5
+    overflow-x: hidden
 
 header
     background: linear-gradient(41deg, rgba(57,57,66,1) 0%, rgba(32,32,32,1) 100%)
     width: 100%
     height: 60rem
-
     display: flex
     align-items: center
 
@@ -21,8 +21,11 @@ header
         justify-content: space-between
         align-items: center
 
+        @media (max-width: 1200px)
+            display: none
+
         .item
-            font-size: 17em
+            font-size: 17rem
             color: #fff !important
             text-decoration: none
 
@@ -36,7 +39,8 @@ header
         font-size: 15rem
 
     @media (min-width: 650px) and (max-width: 1200px)
-            font-size: 30rem
+        font-size: 40rem
+        padding-bottom: 20rem
 
 .container
     max-width: 1300rem
@@ -60,7 +64,8 @@ header
 
     @media (min-width: 650px) and (max-width: 1200px)
         width: 100%
-        max-width: 700rem
+        max-width: 100%
+        padding: 30rem 40rem
 
 .input_div
     margin-top: 25rem
@@ -79,7 +84,7 @@ label
         font-size: 12rem
 
     @media (min-width: 650px) and (max-width: 1200px)
-        font-size: 25rem
+        font-size: 35rem
 
     input
         outline: none
@@ -99,8 +104,8 @@ label
             width: 140rem
 
         @media (min-width: 650px) and (max-width: 1200px)
-            width: 400rem
-            font-size: 20rem
+            width: calc(100% - 350rem)
+            font-size: 30rem
 
 .btn
     border-radius: 5rem
@@ -120,6 +125,9 @@ label
         margin-bottom: 10rem
         font-size: 12rem
 
+    @media (min-width: 650px) and (max-width: 1200px)
+        font-size: 30rem
+
     &:hover
         border: 1rem solid #77b43b
         box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.00), 0px 8px 6px 0px rgba(0, 0, 0, 0.03), 0px 20px 13px 0px rgba(0, 0, 0, 0.02), 0px 20px 20px 0px rgba(0, 0, 0, 0.03), 0px 64.81481170654297px 46.85185241699219px 0px rgba(0, 0, 0, 0.04), 0px 100px 80px 0px rgba(0, 0, 0, 0.04)
@@ -127,3 +135,43 @@ label
 .btns
     display: flex
     gap: 20rem
+
+.bi
+    display: none
+    width: 30rem
+    height: 30rem
+
+    @media (max-width: 1200px)
+        display: block
+        text-align: end
+
+.burger
+    display: flex
+    cursor: pointer
+    @media (max-width: 1200px)
+        justify-content: flex-end
+
+.drop_menu
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    padding: 20rem
+    background: linear-gradient(41deg, rgba(57,57,66,1) 0%, rgba(32,32,32,1) 100%)
+    transition: .2s
+    transform: translateX(10000rem)
+
+    .cont
+        max-width: 1300rem
+        width: 100%
+        margin-inline: auto
+        display: flex
+        flex-direction: column
+        align-items: center
+        gap: 15rem
+
+    .item
+        font-size: 17rem
+        font-size: 17rem
+        color: #fff !important
+        text-decoration: none
