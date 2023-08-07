@@ -88,9 +88,6 @@ export default {
                     description: this.inputs[1].value,
                     price: this.inputs[2].value,
                 })
-                    .then((response) => {
-                        console.log(response)
-                    })
             } catch (e) {
                 console.log(e);
             }

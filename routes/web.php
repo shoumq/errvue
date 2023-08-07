@@ -18,6 +18,7 @@ Route::post('/login2_post', [TestController::class, 'login_for_second_page_post'
 Route::get('/login3', [TestController::class, 'login_for_third_page']);
 
 Route::get('/login4', [TestController::class, 'login_for_fourth_page']);
+Route::post('/login4_post', [TestController::class, 'login_for_fourth_page_post']);
 
 Route::get('/login5', [TestController::class, 'login_for_fifth_page']);
 Route::post('/login5_post', [TestController::class, 'login_for_fifth_page_post']);

@@ -87,7 +87,6 @@ export default {
             try {
                 axios.post('/login2_post', {
                     title: this.inputs[0].value,
-                    desc: this.inputs[1].value,
                     price: this.inputs[2].value,
                 })
                     .then((response) => {

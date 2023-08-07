@@ -6,6 +6,7 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Illuminate\Validation\ValidationException;
+use Mockery\Exception;
 
 class TestController extends Controller
 {
@@ -27,11 +28,24 @@ class TestController extends Controller
 
     public function login_for_second_page_post(Request $request)
     {
-        if ($request->description == null) {
-            throw ValidationException::withMessages(['description' => 'description is incorrect']);
-        } else {
-            return "Success!";
-        }
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required',
+            'price' => 'required',
+        ]);
+
+        $product = new Product();
+        $product->title = $request->title;
+        $product->description = $request->description;
+        $product->price = $request->price;
+        $product->save();
+
+        return response()->json($product);
+//        if ($request->description == null) {
+//            throw ValidationException::withMessages(['description' => 'description is incorrect']);
+//        } else {
+//            return "Success!";
+//        }
     }
 
     public function login_for_third_page()
@@ -42,6 +56,21 @@ class TestController extends Controller
     public function login_for_fourth_page()
     {
         return Inertia::render('Login4');
+    }
+
+    public function login_for_fourth_page_post(Request $request)
+    {
+        try {
+            $product = new Product();
+            $product->title = $request->title;
+            $product->description = $request->description;
+            $product->price = $request->price;
+            $product->save();
+
+            return response()->json($product);
+        } catch (Exception $exception) {
+            return response()->json(['Message' => '400 error'], 400);
+        }
     }
 
     public function login_for_fifth_page()
@@ -55,7 +84,7 @@ class TestController extends Controller
         $product->title = $request->title;
         $product->description = $request->description;
         $product->price = $request->price;
-        $product->save();
+//        $product->save();
     }
 
     public function login_for_sixth_page()

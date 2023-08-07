@@ -85,10 +85,10 @@ export default {
     methods: {
         sendRequest: function () {
             try {
-                axios.post('/login2_post', {
+                axios.post('/login4_post', {
                     title: this.inputs[0].value,
-                    desc: this.inputs[1].value,
-                    price: this.inputs[2].value,
+                    description: this.inputs[1].value,
+                    cost: this.inputs[2].value,
                 })
                     .then((response) => {
                         console.log(response)
